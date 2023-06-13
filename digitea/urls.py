@@ -19,9 +19,9 @@ from book.views import BookListApiView,BookCreateApiView,BookUpdateView,BookRetr
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',BookListApiView.as_view()),
-    path('create/',BookCreateApiView.as_view()),
-    path('update/<int:pk>/',BookUpdateView.as_view()),
-    path('retrieve/<int:pk>',BookRetrieveView.as_view()),
-    path('destroy/<int:pk>/',BookDestroyView.as_view())
+    path('',BookListApiView.as_view(),name="book-list"),
+    path('create/',BookCreateApiView.as_view(),name="create"),
+    path('update/<int:pk>/',BookUpdateView.as_view(),name="update"),
+    path('retrieve/<int:pk>',BookRetrieveView.as_view(),name="retrieve"),
+    path('destroy/<int:pk>/',BookDestroyView.as_view(),name="destroy")
 ]
